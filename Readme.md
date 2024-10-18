@@ -1,3 +1,8 @@
+In your ubunutu terminal type in these commands
+
+	sudo apt update
+	sudo apt install msmtp mailutils
+
 Important: To create an app password, you need 2-Step Verification on your Google Account.
 
 To turn on 2 step verification follow these steps
