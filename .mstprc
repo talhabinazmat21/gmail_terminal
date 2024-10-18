@@ -1,0 +1,14 @@
+# Gmail account
+account gmail
+host smtp.gmail.com
+port 587
+auth on
+tls on
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+user <"Paste your email here">
+password <"Paste the gmail app passkey here">
+from <"Paste your email here">
+logfile ~/.msmtp.log
+
+# Default account
+account default : gmail
