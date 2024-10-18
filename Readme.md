@@ -17,10 +17,12 @@ Now to make a app password just search for "App password" in the search bar of y
 
 
 After that do the following steps
+
 	chmod 600 ~/.msmtprc
 
 And finally to send an email you can write the following command
- 
+
+ 	(
 	echo "Subject: Subject of the Email"
 	echo "To: <recipient_email>"
 	echo "MIME-Version: 1.0"
