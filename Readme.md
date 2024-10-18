@@ -21,7 +21,25 @@ After that do the following steps
 
 And finally to send an email you can write the following command
  
-echo "This is the body of the email" | mutt -s "Subject of the Email" -a /path/to/file -- recipient_email@gmail.com
+	echo "Subject: Subject of the Email"
+	echo "To: <recipient_email>"
+	echo "MIME-Version: 1.0"
+	echo "Content-Type: multipart/mixed; boundary=\"sep\""
+	echo ""
+	echo "--sep"
+	echo "Content-Type: text/plain; charset=utf-8"
+	echo "Content-Transfer-Encoding: 7bit"
+	echo ""
+	echo "<content of email>"
+	echo ""
+	echo "--sep"
+	echo "Content-Type: application/octet-stream; name=\"<name of file>\""
+	echo "Content-Transfer-Encoding: base64"
+	echo "Content-Disposition: attachment; filename=\"<name of file>\""
+	echo ""
+	base64 /path/to/file
+	echo "--sep--"
+	) | msmtp <recipient_email>
 
 
 	
